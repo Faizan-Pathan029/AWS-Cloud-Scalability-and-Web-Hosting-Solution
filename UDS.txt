@@ -1,0 +1,7 @@
+#!/bin/bash
+yum install -y httpd
+sleep 5
+aws s3 cp s3://aws-project-ethans/index.html  /var/www/html/index.html
+sleep 5
+echo $(hostname) >>/var/www/html/index.html
+service httpd restart
